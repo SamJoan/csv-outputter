@@ -21,6 +21,7 @@ program must output a csv of n rows specified via the `rows` argument, the heade
 The
 csv filename must be of the form YYYY-MM-DD-HH_MM_SS.csv (eg: 2018-04-27-6_50_55), using the time at which we are executing the program.
 """
+from datetime import datetime
 from random import randint
 import click
 import random
@@ -62,7 +63,14 @@ def csv(rows, output_path, columns):
         if nb_row != rows - 1:
             result += '\n'
 
-    print(result)
+    if output_path == '-':
+        print(result)
+    else: 
+        now = datetime.now()
+        filename = now.strftime("%Y-%m-%d-%H_%M_%S.csv")
+        print(filename)
+        with open(output_path + '/' + filename, 'w') as fh:
+            fh.write(result)
 
 if __name__ == '__main__':
     csv()
