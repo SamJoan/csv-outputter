@@ -1,26 +1,3 @@
-"""
-Create a python3 script, that when executed from
-the command line can accept up to three named options and output a csv file in a local directory of the server we execute it from.
-
-The
-second named option `output_path`  can only be specified once and is optional, this is to specify where we want the file to be saved. If not specified, the file will be saved in the current directory.
-
-The
-third named option is `column` and MUST be specified at least once but can be specified multiple times. The form of the argument must be: column_name,type. Type of the argument can be `integer` or `string`.
-
-
-If
-a required option is missing or is invalid you MUST show a message on how to use the program.
-
-
-The
-program must output a csv of n rows specified via the `rows` argument, the header specified in the `column` option via the column_name must appear in the csv file. We will generate different random data for each columns and rows of type integer (eg: 1,2,3000,
-…) or string (alpha strings with a length between 1 and 10 characters)
-
-
-The
-csv filename must be of the form YYYY-MM-DD-HH_MM_SS.csv (eg: 2018-04-27-6_50_55), using the time at which we are executing the program.
-"""
 from datetime import datetime
 from random import randint
 import click

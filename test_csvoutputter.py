@@ -44,5 +44,3 @@ def test_file_write(tmp_path):
         result = fh.read()
         assert len(result.split('\n')) == 51
 
-
-
